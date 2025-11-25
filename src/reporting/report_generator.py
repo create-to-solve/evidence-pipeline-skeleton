@@ -6,6 +6,8 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+from src.reporting.indicator_summary import generate_indicator_section
+
 
 import pandas as pd
 
@@ -243,7 +245,12 @@ def generate_report(
     lines.append(_summarise_classification(classified_path))
     lines.append("")
 
-    # 7. Output Artefacts
+    # 7. Per-Capita Indicator Summary
+    indicator_section = generate_indicator_section()
+    lines.append(indicator_section)
+    lines.append("")
+
+    # 8. Output Artefacts
     lines.append("## 6. Output Artefacts")
     lines.append("")
     raw_path = Path("data/raw/ons_co2_emissions.csv")

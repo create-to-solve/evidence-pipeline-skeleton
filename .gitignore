@@ -21,3 +21,5 @@ outputs/*.png
 # Metadata and generated reports
 outputs/report.md
 metadata.json
+.env
+pd/
