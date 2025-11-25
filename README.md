@@ -7,6 +7,27 @@ This repository implements a lightweight, modular pipeline for processing UK ope
 The project is organised into modular components for ingestion, harmonisation, validation, indicators, reporting, visualization, and diagnostic agents. The data directory stores raw downloads and processed outputs locally (ignored in Git), while the outputs directory contains the generated report and figures.
 
 ## How to Run
-The full pipeline can be executed through the main run() function in src/pipeline, which performs ingestion, cleaning, validation, indicator calculation, and report generation. Individual sub-pipelines (emissions summary, population, indicators) can also be run independently. Dependencies can be installed from requirements.txt.
+How to Run
+
+To run the full pipeline:
+
+from src.pipeline import run
+run()
+
+This performs ingestion → cleaning → validation → indicators → report → visuals.
+
+To run individual components:
+
+Emissions summary pipeline:
+from src.pipeline_emissions_summary import run_emissions_summary_pipeline
+run_emissions_summary_pipeline()
+
+Population pipeline:
+from src.pipeline_population import run_population
+run_population()
+
+Indicator pipeline:
+from src.pipeline_indicators import run_indicators
+run_indicators()
 
 
