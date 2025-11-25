@@ -42,10 +42,24 @@ class MetadataStore:
         self.events.append(event)
         self.save()
 
+    def _convert(self, obj):
+        """Recursively convert non-JSON-serializable types (e.g., numpy types)
+        into standard Python types."""
+        if isinstance(obj, dict):
+            return {self._convert(k): self._convert(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [self._convert(i) for i in obj]
+        elif hasattr(obj, "item"):  # numpy scalar
+            return obj.item()
+        else:
+            return obj
+
     def save(self):
-        """Write metadata events to disk."""
+        """Write metadata events to disk with type normalization."""
+        serializable_events = self._convert(self.events)
         with open(self.path, "w") as f:
-            json.dump(self.events, f, indent=2)
+            json.dump(serializable_events, f, indent=2)
+
 
     def load(self):
         """Load metadata events from disk."""
