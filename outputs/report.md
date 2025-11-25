@@ -1,6 +1,6 @@
 # Evidence Pipeline Report
 
-Generated: `2025-11-25T15:51:41.510777+00:00`
+Generated: `2025-11-25T18:49:18.974423+00:00`
 
 ## 1. Ingestion Summary
 
@@ -66,6 +66,48 @@ Classification counts (by `record_type`):
 
 - **local_authority**: 532602
 - **unknown**: 414
+
+## 7. Per-Capita Emissions Summary (2021)
+
+- **Local Authorities included**: 314
+- **Mean**: 4.2 tonnes CO₂ per person
+- **Median**: 3.86 tonnes CO₂ per person
+- **Minimum**: 2.19
+- **Maximum**: 47.51
+
+### Top 10 Highest Per-Capita Emitters
+| local_authority | local_authority_code | per_capita_tonnes |
+| --- | --- | --- |
+| City of London | E09000001 | 47.51248813263864 |
+| High Peak | E07000037 | 8.132290366027748 |
+| Derbyshire Dales | E07000035 | 7.9331383278937455 |
+| Rutland | E06000017 | 7.729057584773367 |
+| Westminster | E09000033 | 7.662463167825681 |
+| North West Leicestershire | E07000134 | 7.240994403280386 |
+| Wrexham | W06000006 | 6.853196841127828 |
+| North Warwickshire | E07000218 | 6.816969483831371 |
+| Newark and Sherwood | E07000175 | 6.697721365830328 |
+| Flintshire | W06000005 | 6.539544718537189 |
+
+### Top 10 Lowest Per-Capita Emitters
+| local_authority | local_authority_code | per_capita_tonnes |
+| --- | --- | --- |
+| Hackney | E09000012 | 2.192586521476566 |
+| Waltham Forest | E09000031 | 2.201900851490167 |
+| Harrow | E09000015 | 2.217326314094904 |
+| Lewisham | E09000023 | 2.2202711126059107 |
+| Barking and Dagenham | E09000002 | 2.249097671602015 |
+| Redbridge | E09000026 | 2.2770764528438168 |
+| Isles of Scilly | E06000053 | 2.292791034247101 |
+| Haringey | E09000014 | 2.3646488906020817 |
+| Gosport | E07000088 | 2.4080615350601837 |
+| Wandsworth | E09000032 | 2.484361418263062 |
+
+### Visualisations
+
+- Per-capita distribution: `outputs/visuals/emission_distribution.png`
+- Classification breakdown: `outputs/visuals/classification_breakdown.png`
+
 
 ## 6. Output Artefacts
 
